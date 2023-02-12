@@ -11,12 +11,6 @@ function Nav() {
         <img src={logo} className="h-4 md:h-auto" alt="" />
       </Link>
       <ul>
-        {/* <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li> */}
         {!state.isAuthenticated ? (
           <li>
             <Link to="/login">Sign in</Link>

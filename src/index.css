@@ -149,3 +149,7 @@ footer img {
 textarea::-webkit-scrollbar {
     display: none;
 }
+
+.error {
+    @apply flex flex-col justify-center items-center py-40
+}

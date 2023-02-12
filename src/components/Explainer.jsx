@@ -17,7 +17,7 @@ function Explainer() {
     const newConversation = [...conversation, { sent: message }];
 
     setConversation(newConversation);
-    fetch("https://devspal-server.onrender.com/all", {
+    fetch("http://localhost:5000/all", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

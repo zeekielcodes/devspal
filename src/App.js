@@ -10,6 +10,7 @@ import AppContext, { ContextSource } from "./components/AppContext";
 import { useContext, useEffect } from "react";
 import { auth } from "./firebase";
 import Modal from "./components/Modal";
+import Error from "./pages/Error";
 
 function App() {
   const { state, dispatch } = useContext(ContextSource);
@@ -34,6 +35,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/*" element={<Error />} />
         </Routes>
         <Footer />
       </Router>
