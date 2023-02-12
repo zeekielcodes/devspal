@@ -3,33 +3,6 @@ import devpal from "../assets/images/logo3.png";
 import Typewriter from "typewriter-effect";
 
 function Reply({ replyMessage }) {
-  const [newReply, setNewReply] = useState("");
-
-  // useEffect(() => {
-  //   var i = 0;
-  //   var txt = replyMessage; /* The text */
-  //   var speed = 50; /* The speed/duration of the effect in milliseconds */
-
-  //   function typeWriter() {
-  //     if (i < txt.length) {
-  //       const add = newReply + txt.charAt(i);
-  //       console.log(i);
-  //       console.log(add);
-  //       setNewReply(add);
-  //       i++;
-  //       setTimeout(typeWriter, speed);
-  //     }
-  //   }
-
-  //   typeWriter();
-  // }, []);
-
-  // var typewriter = new Typewriter(newReply, {
-  //   loop: true,
-  //   delay: 1000, // SET TO USE A 1 SECOND DELAY
-  //   cursorClassName: "cursorSize", // SET TO MY CUSTOM CLASS NAME
-  // });
-
   return (
     <div className="reply">
       <img
@@ -37,15 +10,20 @@ function Reply({ replyMessage }) {
         className="h-[30px] w-[72px] object-contain self-start"
         alt=""
       />
-      <div className="whitespace-pre-wrap">
-        {/* {typewriter.typeString("Hello World!").start()} */}
+      <div className="whitespace-pre-wrap cursor-none">
         <Typewriter
           onInit={(typewriter) => {
-            typewriter.typeString(replyMessage).changeDelay(10).start();
+            typewriter
+              .typeString("...")
+              .deleteAll()
+              .typeString(replyMessage.trim())
+              .changeDelay(1)
+              .start();
+          }}
+          options={{
+            delay: 25,
           }}
         />
-        {/* {/* {replyMessage}
-        {newReply} */}
       </div>
     </div>
   );

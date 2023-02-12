@@ -9,15 +9,14 @@ import SentMessage from "./SentMessage";
 
 function Explainer() {
   const [message, setMessage] = useState("");
-  const [reply, setReply] = useState("");
   const [conversation, setConversation] = useState([]);
-  const { state, dispatch } = useContext(ContextSource);
+  const { dispatch } = useContext(ContextSource);
 
   const explain = (e) => {
     e.preventDefault();
     const newConversation = [...conversation, { sent: message }];
-    setConversation([...newConversation, { reply: "." }]);
-    console.log(conversation);
+
+    setConversation(newConversation);
     fetch("https://devspal-server.onrender.com/all", {
       method: "POST",
       headers: {
@@ -29,15 +28,10 @@ function Explainer() {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
-        // setReply(data.error.message);
         const anotherConvo = [...newConversation, { reply: data.bot }];
         setConversation(anotherConvo);
-        console.log(conversation);
       })
       .catch((error) => {
-        console.log("Messagee", error.message);
-        // setReply(error);
         setConversation([
           ...newConversation,
           { reply: "Something went wrong!" },
@@ -73,7 +67,9 @@ function Explainer() {
   return (
     <div className="chats">
       <div className="flex justify-between items-center">
-        <h2 className="text-[24px] md:text-[32px]">Help at hand</h2>
+        <h2 className="text-[24px] md:text-[32px]">
+          Help at hand <span className="text-gray-600">&#9994;</span>
+        </h2>
         <button
           onClick={logOut}
           className="bg-[#5DCB89] md:hidden text-black h-[40px] w-[40px] flex items-center justify-center rounded"

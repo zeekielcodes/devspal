@@ -1,5 +1,5 @@
 import { signOut } from "firebase/auth";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { BsPower } from "react-icons/bs";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import hero from "../assets/images/theface.jpg";
