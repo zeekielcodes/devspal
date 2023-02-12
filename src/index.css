@@ -1,13 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    @apply font-Hammersmith bg-black text-white
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+nav {
+    @apply flex justify-between items-center py-4
+}
+
+.pad {
+    @apply px-4 md:px-8 lg:px-12 xl:px-40
+}
+
+nav ul {
+    @apply flex gap-4 items-center
+}
+
+.hero {
+    @apply flex flex-col md:flex-row items-center py-8
+}
+
+.hero-text, .hero img {
+    @apply w-full md:w-1/2
+}
+
+.hero-text {
+    @apply py-12
+}
+
+.hero-text button {
+    @apply py-2 px-6 rounded
+}
+
+.features {
+    @apply flex flex-col gap-4 items-center py-12 bg-[#5DCB89]
+}
+
+.feature-list {
+    @apply grid gap-8  md:gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 text-center
+}
+
+.feature-list h3 {
+    @apply my-2 text-[18px]
+}
+
+.feature-list p {
+    @apply text-[15px]
+}
+
+.feature-list .icon {
+    @apply flex justify-center items-center text-[24px] h-[50px] w-[50px] bg-[#5DCB89] text-black rounded-full
+}
+
+.feature-list div {
+    @apply p-4 hover:bg-gray-500 rounded
+}
+
+.feature-list div:hover .icon {
+    @apply bg-black text-white
+}
+
+.modal {
+    @apply fixed top-1 bg-[#5DCB89] text-black p-4 right-0 left-0 text-center
+}
+
+.cta {
+    @apply py-8 flex flex-col md:flex-row items-center text-white
+}
+
+.cta img {
+    @apply w-full md:w-1/2
+}
+
+.message {
+    @apply px-4 md:px-12 lg:px-40 py-20 bg-[#5DCB89]
+}
+
+footer {
+    @apply flex flex-col md:flex-row gap-4 justify-between items-start md:items-center mt-8 py-8 text-[14px]
+}
+
+footer img {
+    @apply h-4 md:h-[22px]
+}
+
+.login {
+    @apply py-20 flex justify-center items-center
+}
+
+.login form {
+    @apply w-full md:w-3/5 lg:w-2/5 flex flex-col gap-2 shadow-form p-4
+}
+
+.login form input, .login form button {
+    @apply h-[40px] rounded text-black
+}
+
+.login form button{
+    @apply bg-[#5DCB89]
+}
+
+.dashboard {
+    @apply flex gap-2 py-4
+}
+
+
+.dashboard aside {
+    @apply hidden md:flex w-1/3 bg-[rgba(255,255,255,0.1)] h-screen p-4 items-center justify-between flex-col
+}
+
+.chats {
+    @apply relative w-full h-screen md:w-2/3 md:p-2
+}
+
+.chats form {
+    @apply absolute bottom-0 w-full flex gap-2
+}
+
+.chats form input {
+    @apply w-11/12 h-[40px] bg-[rgba(255,255,255,0.1)] placeholder:text-white px-2
+}
+
+.chats form textarea {
+    @apply bg-[rgba(255,255,255,0.1)] placeholder:text-white resize-none
+}
+
+.chats .sent {
+    @apply bg-[#5DCB89] text-black p-2 w-full flex gap-2 mb-2 items-center
+}
+
+.chats .reply {
+    @apply flex gap-2 bg-[rgba(255,255,255,0.1)] text-white py-4 px-2 mb-2 items-center
+}
+
+.convo, textarea {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.convo::-webkit-scrollbar {
+    display: none;
+}
+
+textarea::-webkit-scrollbar {
+    display: none;
 }
