@@ -11,19 +11,26 @@ function Reply({ replyMessage }) {
         alt=""
       />
       <div className="whitespace-pre-wrap cursor-none">
-        <Typewriter
-          onInit={(typewriter) => {
-            typewriter
-              .typeString("...")
-              .deleteAll()
-              .typeString(replyMessage.trim())
-              .changeDelay(1)
-              .start();
-          }}
-          options={{
-            delay: 25,
-          }}
-        />
+        {replyMessage ? (
+          <Typewriter
+            onInit={(typewriter) => {
+              typewriter.typeString(replyMessage.trim()).changeDelay(1).start();
+            }}
+            options={{
+              delay: 25,
+            }}
+          />
+        ) : (
+          <Typewriter
+            onInit={(typewriter) => {
+              typewriter.typeString("...").deleteAll().changeDelay(1).start();
+            }}
+            options={{
+              delay: 100,
+              loop: true,
+            }}
+          />
+        )}
       </div>
     </div>
   );

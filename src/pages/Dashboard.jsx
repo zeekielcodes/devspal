@@ -44,7 +44,7 @@ function Dashboard() {
           </div>
 
           <ul className="w-full">
-            <li className="bg-gray-400 w-full text-center text-black py-4">
+            <li className="bg-white w-full text-center text-black py-4">
               DevsPal Live
             </li>
           </ul>

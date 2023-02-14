@@ -11,13 +11,14 @@ function Explainer() {
   const [message, setMessage] = useState("");
   const [conversation, setConversation] = useState([]);
   const { dispatch } = useContext(ContextSource);
+  const [loading, setLoading] = useState(true);
 
   const explain = (e) => {
     e.preventDefault();
     const newConversation = [...conversation, { sent: message }];
-
+    setLoading(true);
     setConversation(newConversation);
-    fetch("http://localhost:5000/all", {
+    fetch("https://devspal-server.onrender.com/all", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -28,10 +29,12 @@ function Explainer() {
     })
       .then((response) => response.json())
       .then((data) => {
+        setLoading(false);
         const anotherConvo = [...newConversation, { reply: data.bot }];
         setConversation(anotherConvo);
       })
       .catch((error) => {
+        setLoading(false);
         setConversation([
           ...newConversation,
           { reply: "Something went wrong!" },
@@ -84,6 +87,10 @@ function Explainer() {
             {chat.sent && (
               <SentMessage key={new Date().getTime()} sentMessage={chat.sent} />
             )}
+            {index >= conversation.length - 1 &&
+              loading &&
+              chat.sent &&
+              !chat.reply && <Reply replyMessage="" />}
             {chat.reply && <Reply replyMessage={chat.reply} />}
           </div>
         ))}
@@ -92,7 +99,7 @@ function Explainer() {
         <div className="flex justify-end">
           <button
             onClick={() => setConversation([])}
-            className="flex gap-2 bg-red-400 text-white items-center px-4 py-2 rounded"
+            className="flex gap-2 bg-red-500 text-white items-center px-4 py-2 rounded"
           >
             <BsTrash /> Clear chats
           </button>
@@ -110,7 +117,7 @@ function Explainer() {
         ></textarea>
         <button
           disabled={message.length < 1}
-          className="w-[40px] flex justify-center items-center rounded text-[22px] bg-[#5DCB89] text-black"
+          className="w-[40px] flex justify-center outline-none items-center rounded text-[22px] bg-[#5DCB89] text-black"
         >
           <BiSend />
         </button>

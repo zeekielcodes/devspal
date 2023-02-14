@@ -16,7 +16,7 @@ function Hero() {
           understanding for all skill levels. Upgrade your coding experience
           with us.
         </p>
-        <div className="flex gap-4">
+        <div className="flex space-x-4">
           <button
             onClick={() => navigate("/login")}
             className="bg-[#1BF0A2] text-black"

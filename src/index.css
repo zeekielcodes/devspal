@@ -17,7 +17,7 @@ nav {
 }
 
 nav ul {
-    @apply flex gap-4 items-center
+    @apply flex items-center
 }
 
 .hero {
@@ -37,11 +37,11 @@ nav ul {
 }
 
 .features {
-    @apply flex flex-col gap-4 items-center py-12 bg-[#5DCB89]
+    @apply flex flex-col items-center py-12 bg-[#5DCB89]
 }
 
 .feature-list {
-    @apply grid gap-8  md:gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 text-center
+    @apply grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 text-center
 }
 
 .feature-list h3 {
@@ -57,7 +57,7 @@ nav ul {
 }
 
 .feature-list div {
-    @apply p-4 hover:bg-gray-500 rounded
+    @apply p-4 hover:bg-white rounded hover:text-black
 }
 
 .feature-list div:hover .icon {
@@ -65,8 +65,12 @@ nav ul {
 }
 
 .modal {
-    @apply fixed top-1 bg-[#5DCB89] text-black p-4 right-0 left-0 text-center
+    @apply fixed z-50 top-1 bg-[#5DCB89] text-black p-4 right-0 left-0 text-center
 }
+
+.Typewriter__cursor {
+    visibility: hidden;
+  }
 
 .cta {
     @apply py-8 flex flex-col md:flex-row items-center text-white
@@ -81,7 +85,7 @@ nav ul {
 }
 
 footer {
-    @apply flex flex-col md:flex-row gap-4 justify-between items-start md:items-center mt-8 py-8 text-[14px]
+    @apply flex flex-col md:flex-row space-y-4 justify-between items-start md:items-center mt-8 py-8 text-[14px]
 }
 
 footer img {
@@ -93,7 +97,7 @@ footer img {
 }
 
 .login form {
-    @apply w-full md:w-3/5 lg:w-2/5 flex flex-col gap-2 shadow-form p-4
+    @apply w-full md:w-3/5 lg:w-2/5 flex flex-col space-y-2 shadow-form p-4
 }
 
 .login form input, .login form button {
@@ -105,7 +109,7 @@ footer img {
 }
 
 .dashboard {
-    @apply flex gap-2 py-4
+    @apply flex space-x-2 py-4
 }
 
 
@@ -118,7 +122,7 @@ footer img {
 }
 
 .chats form {
-    @apply absolute bottom-0 w-full flex gap-2
+    @apply absolute bottom-0 w-full flex space-x-2 z-50
 }
 
 .chats form input {
@@ -126,15 +130,15 @@ footer img {
 }
 
 .chats form textarea {
-    @apply bg-[rgba(255,255,255,0.1)] placeholder:text-white resize-none
+    @apply bg-[rgba(255,255,255,0.1)] outline-none placeholder:text-[rgba(255,255,255,0.6)] resize-none
 }
 
 .chats .sent {
-    @apply bg-[#5DCB89] text-black p-2 w-full flex gap-2 mb-2 items-center
+    @apply bg-[#5DCB89] text-black p-2 w-full flex space-x-2 mb-2 items-center
 }
 
 .chats .reply {
-    @apply flex gap-2 bg-[rgba(255,255,255,0.1)] text-white py-4 px-2 mb-2 items-center
+    @apply flex space-x-2 bg-[rgba(255,255,255,0.1)] text-white py-4 px-2 mb-2 items-center
 }
 
 .convo, textarea {
@@ -151,5 +155,5 @@ textarea::-webkit-scrollbar {
 }
 
 .error {
-    @apply flex flex-col justify-center items-center py-40
+    @apply flex flex-col justify-center items-center py-24 md:py-40
 }
