@@ -39,6 +39,8 @@ function Dashboard() {
             <h2 className="text-[24px]">
               {state.user.displayName
                 ? state.user.displayName
+                : state.user.name
+                ? state.user.name
                 : state.user.email}
             </h2>
           </div>

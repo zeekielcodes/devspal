@@ -10,7 +10,13 @@ function Reply({ replyMessage }) {
         className="h-[30px] w-[72px] object-contain self-start"
         alt=""
       />
-      <div className="whitespace-pre-wrap cursor-none">
+      <div
+        className={
+          replyMessage === "Something went wrong!"
+            ? "text-red-500 whitespace-pre-wrap"
+            : "whitespace-pre-wrap"
+        }
+      >
         {replyMessage ? (
           <Typewriter
             onInit={(typewriter) => {

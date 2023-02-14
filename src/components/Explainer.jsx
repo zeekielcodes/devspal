@@ -98,7 +98,10 @@ function Explainer() {
       {conversation.length > 0 && (
         <div className="flex justify-end">
           <button
-            onClick={() => setConversation([])}
+            onClick={() => {
+              setConversation([]);
+              localStorage.clear();
+            }}
             className="flex gap-2 bg-red-500 text-white items-center px-4 py-2 rounded"
           >
             <BsTrash /> Clear chats

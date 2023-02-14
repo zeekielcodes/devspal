@@ -101,7 +101,7 @@ footer img {
 }
 
 .login form input, .login form button {
-    @apply h-[40px] rounded text-black
+    @apply h-[40px] rounded text-black outline-none
 }
 
 .login form button{
