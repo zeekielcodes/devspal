@@ -18,28 +18,131 @@ function Explainer() {
     const newConversation = [...conversation, { sent: message }];
     setLoading(true);
     setConversation(newConversation);
-    fetch("https://devspal-server.onrender.com/all", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        prompt: message,
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
+    switch (message.toLowerCase()) {
+      case "hello":
         setLoading(false);
-        const anotherConvo = [...newConversation, { reply: data.bot }];
-        setConversation(anotherConvo);
-      })
-      .catch((error) => {
-        setLoading(false);
-        setConversation([
+        const anotherConvo = [
           ...newConversation,
-          { reply: "Something went wrong!" },
-        ]);
-      });
+          { reply: "Hi, how may I help you today ?" },
+        ];
+        setConversation(anotherConvo);
+        break;
+      case "hi":
+        setLoading(false);
+        const newConvo = [
+          ...newConversation,
+          { reply: "Hello, need my help ?" },
+        ];
+        setConversation(newConvo);
+        break;
+      case "who are you":
+        setLoading(false);
+        const newConvo2 = [
+          ...newConversation,
+          {
+            reply: "I am DevsPal - a chatbot programmed by Ezekiel A. Tobiloba",
+          },
+        ];
+        setConversation(newConvo2);
+        break;
+      case "who are you?":
+        setLoading(false);
+        const newConvo3 = [
+          ...newConversation,
+          {
+            reply: "I am DevsPal - a chatbot programmed by Ezekiel A. Tobiloba",
+          },
+        ];
+        setConversation(newConvo3);
+        break;
+      case "what can you do":
+        setLoading(false);
+        const newConvo4 = [
+          ...newConversation,
+          {
+            reply:
+              "I can interact and give accurate responses to your queries.",
+          },
+        ];
+        setConversation(newConvo4);
+        break;
+      case "what can you do?":
+        setLoading(false);
+        const newConvo5 = [
+          ...newConversation,
+          {
+            reply:
+              "I can interact and give accurate responses to your queries.",
+          },
+        ];
+        setConversation(newConvo5);
+        break;
+      case "what are you?":
+        setLoading(false);
+        const newConvo6 = [
+          ...newConversation,
+          {
+            reply: "A chatbot.",
+          },
+        ];
+        setConversation(newConvo6);
+        break;
+      case "what are you":
+        setLoading(false);
+        const newConvo7 = [
+          ...newConversation,
+          {
+            reply: "A chatbot.",
+          },
+        ];
+        setConversation(newConvo7);
+        break;
+      case "who made you?":
+        setLoading(false);
+        const newConvo8 = [
+          ...newConversation,
+          {
+            reply:
+              "This chatbot was created by Ezekiel A. Tobiloba - A Frontend Engineer",
+          },
+        ];
+        setConversation(newConvo8);
+        break;
+      case "who made you":
+        setLoading(false);
+        const newConvo9 = [
+          ...newConversation,
+          {
+            reply:
+              "This chatbot was created by Ezekiel A. Tobiloba - A Frontend Engineer",
+          },
+        ];
+        setConversation(newConvo9);
+        break;
+      default:
+        fetch("https://devspal-server.onrender.com/all", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            prompt: message,
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            setLoading(false);
+            const anotherConvo = [...newConversation, { reply: data.bot }];
+            setConversation(anotherConvo);
+          })
+          .catch((error) => {
+            setLoading(false);
+            setConversation([
+              ...newConversation,
+              { reply: "Something went wrong!" },
+            ]);
+          });
+    }
     setMessage("");
   };
 
