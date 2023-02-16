@@ -67,7 +67,7 @@ function Login() {
       </div>
     );
   } else {
-    navigate("/dashboard");
+    return navigate("/dashboard");
   }
 }
 

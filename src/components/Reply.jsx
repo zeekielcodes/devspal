@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import devpal from "../assets/images/logo3.png";
 import Typewriter from "typewriter-effect";
 
@@ -12,7 +12,7 @@ function Reply({ replyMessage }) {
       />
       <div
         className={
-          replyMessage === "Something went wrong!"
+          replyMessage === ("Something went wrong!" || "Error")
             ? "text-red-500 whitespace-pre-wrap"
             : "whitespace-pre-wrap"
         }
@@ -20,7 +20,7 @@ function Reply({ replyMessage }) {
         {replyMessage ? (
           <Typewriter
             onInit={(typewriter) => {
-              typewriter.typeString(replyMessage.trim()).changeDelay(1).start();
+              typewriter.typeString(replyMessage).changeDelay(1).start();
             }}
             options={{
               delay: 25,

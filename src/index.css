@@ -85,7 +85,7 @@ nav ul {
 }
 
 footer {
-    @apply flex flex-col md:flex-row space-y-4 justify-between items-start md:items-center mt-8 py-8 text-[14px]
+    @apply flex flex-col md:flex-row space-y-4 justify-between items-start md:items-center mt-2 md:mt-8 py-8 text-[14px]
 }
 
 footer img {

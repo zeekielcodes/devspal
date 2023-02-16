@@ -1,6 +1,4 @@
 import React, { useContext } from "react";
-import devpal from "../assets/images/logo3.png";
-import theface from "../assets/images/theface.jpg";
 import { ContextSource } from "./AppContext";
 
 function SentMessage({ sentMessage }) {
@@ -20,7 +18,5 @@ function SentMessage({ sentMessage }) {
     </div>
   );
 }
-
-// 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
 
 export default SentMessage;

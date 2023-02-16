@@ -10,9 +10,12 @@ function WhyJoin() {
         <p className="text-[18px]">
           We are available 24/7 to answer any question you have about DevsPal
         </p>
-        <button className="bg-[#5DCB89] text-black rounded px-4 py-2">
+        <a
+          href="https://twitter.com/thefacecodes"
+          className="bg-[#5DCB89] text-black rounded px-4 py-2"
+        >
           Send a message
-        </button>
+        </a>
       </div>
     </div>
   );

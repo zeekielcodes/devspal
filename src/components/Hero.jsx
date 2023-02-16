@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import hero from "../assets/images/hero.png";
 
 function Hero() {
@@ -12,7 +12,7 @@ function Hero() {
           Say goodbye to frustration
         </h1>
         <p className="my-8 w-10/12">
-          The AI-Powered web app for easy programming problem-solving and
+          The AI-Powered chatbot for easy programming problem-solving and
           understanding for all skill levels. Upgrade your coding experience
           with us.
         </p>

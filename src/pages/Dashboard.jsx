@@ -1,8 +1,7 @@
 import { signOut } from "firebase/auth";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { BsPower } from "react-icons/bs";
-import { Route, Routes, useNavigate } from "react-router-dom";
-import hero from "../assets/images/theface.jpg";
+import { useNavigate } from "react-router-dom";
 import { ContextSource } from "../components/AppContext";
 import Explainer from "../components/Explainer";
 import { auth } from "../firebase";
@@ -62,7 +61,7 @@ function Dashboard() {
       </div>
     );
   } else {
-    navigate("/login");
+    return navigate("/login");
   }
 }
 

@@ -23,7 +23,7 @@ function Explainer() {
         setLoading(false);
         const anotherConvo = [
           ...newConversation,
-          { reply: "Hi, how may I help you today ?" },
+          { reply: "Hi, how may I help you ?" },
         ];
         setConversation(anotherConvo);
         break;
@@ -119,6 +119,28 @@ function Explainer() {
         ];
         setConversation(newConvo9);
         break;
+      case "what does devspal mean":
+        setLoading(false);
+        const newConvo10 = [
+          ...newConversation,
+          {
+            reply:
+              "Only Ezekiel knows but I presume it means a close friend of Developers. - which is or was the purpose of this bot",
+          },
+        ];
+        setConversation(newConvo10);
+        break;
+      case "what does devspal mean?":
+        setLoading(false);
+        const newConvo11 = [
+          ...newConversation,
+          {
+            reply:
+              "Only Ezekiel knows but I presume it means a close friend of Developers. - which is or was the purpose of this bot",
+          },
+        ];
+        setConversation(newConvo11);
+        break;
       default:
         fetch("https://devspal-server.onrender.com/all", {
           method: "POST",
@@ -132,7 +154,10 @@ function Explainer() {
           .then((response) => response.json())
           .then((data) => {
             setLoading(false);
-            const anotherConvo = [...newConversation, { reply: data.bot }];
+            const anotherConvo = [
+              ...newConversation,
+              { reply: data.bot ? data.bot : data.error.name },
+            ];
             setConversation(anotherConvo);
           })
           .catch((error) => {

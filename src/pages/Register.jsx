@@ -72,7 +72,7 @@ function Register() {
       </div>
     );
   } else {
-    navigate("/dashboard");
+    return navigate("/dashboard");
   }
 }
 
