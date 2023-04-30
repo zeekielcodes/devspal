@@ -20,7 +20,7 @@ function Reply({ replyMessage }) {
         {replyMessage ? (
           <Typewriter
             onInit={(typewriter) => {
-              typewriter.typeString(replyMessage).changeDelay(1).start();
+              typewriter.typeString(replyMessage.trim()).changeDelay(1).start();
             }}
             options={{
               delay: 25,

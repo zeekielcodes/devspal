@@ -141,6 +141,46 @@ function Explainer() {
         ];
         setConversation(newConvo11);
         break;
+      case "stop":
+        setLoading(false);
+        const newConvo12 = [
+          ...newConversation,
+          {
+            reply: "What should I stop ?",
+          },
+        ];
+        setConversation(newConvo12);
+        break;
+      case "start":
+        setLoading(false);
+        const newConvo13 = [
+          ...newConversation,
+          {
+            reply: "What should I start ?",
+          },
+        ];
+        setConversation(newConvo13);
+        break;
+      case "continue":
+        setLoading(false);
+        const newConvo14 = [
+          ...newConversation,
+          {
+            reply: "What do you want me to continue ?",
+          },
+        ];
+        setConversation(newConvo14);
+        break;
+      case "rest":
+        setLoading(false);
+        const newConvo15 = [
+          ...newConversation,
+          {
+            reply: "NO",
+          },
+        ];
+        setConversation(newConvo15);
+        break;
       default:
         fetch("https://devspal-server.onrender.com/all", {
           method: "POST",

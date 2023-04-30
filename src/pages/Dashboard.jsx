@@ -1,15 +1,13 @@
 import { signOut } from "firebase/auth";
 import React, { useContext } from "react";
 import { BsPower } from "react-icons/bs";
-import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { ContextSource } from "../components/AppContext";
 import Explainer from "../components/Explainer";
 import { auth } from "../firebase";
 
 function Dashboard() {
   const { state, dispatch } = useContext(ContextSource);
-
-  const navigate = useNavigate();
 
   const logOut = () => {
     signOut(auth)
@@ -61,7 +59,7 @@ function Dashboard() {
       </div>
     );
   } else {
-    return navigate("/login");
+    return <Navigate to="/login" />;
   }
 }
 

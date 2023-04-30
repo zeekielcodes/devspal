@@ -1,6 +1,6 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import React, { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { ContextSource } from "../components/AppContext";
 import AuthSignin from "../components/AuthSignin";
 import { auth } from "../firebase";
@@ -9,8 +9,6 @@ function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { state, dispatch } = useContext(ContextSource);
-
-  const navigate = useNavigate();
 
   const signUp = (e) => {
     e.preventDefault();
@@ -72,7 +70,7 @@ function Register() {
       </div>
     );
   } else {
-    return navigate("/dashboard");
+    return <Navigate to="/dashboard" />;
   }
 }
 

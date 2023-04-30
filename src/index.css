@@ -157,3 +157,15 @@ textarea::-webkit-scrollbar {
 .error {
     @apply flex flex-col justify-center items-center py-24 md:py-40
 }
+
+.privacy h2, h4 {
+    @apply text-2xl mb-3
+}
+
+.privacy h3 {
+    @apply text-4xl mt-8 mb-4
+}
+
+.privacy p {
+    @apply my-2 text-base
+}
